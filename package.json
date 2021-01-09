@@ -1,0 +1,26 @@
+{
+  "name": "booksplatform",
+  "version": "1.0.0",
+  "description": "Books Platform ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stepanchaparyan/BooksPlatform.git"
+  },
+  "keywords": [
+    "Books",
+    "MERN"
+  ],
+  "author": "Stepan Chaparyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stepanchaparyan/BooksPlatform/issues"
+  },
+  "homepage": "https://github.com/stepanchaparyan/BooksPlatform#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

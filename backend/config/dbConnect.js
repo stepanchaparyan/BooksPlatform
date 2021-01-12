@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const dbConnect = () => {
-  mongoose.connect('mongodb+srv://user1:pNPzt7QomRoZgolo@cluster0.4ncz4.mongodb.net/booksPlatform', {
+  mongoose.connect(process.env.MONGO_DB_URL, {
   useFindAndModify: true,
   useUnifiedTopology: true,
   useCreateIndex:true,

@@ -1,7 +1,11 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const error = require('./middlewares/errorMiddlewarehandler');
 const usersRoute = require('./routes/usersRoute');
+
+dotenv.config();
 require('./config/dbConnect')();
+
 const app = express();
 
 // Passing body data
@@ -9,6 +13,8 @@ app.use(express.json());
 
 // Routes
 app.use('/api/users', usersRoute);
+
+console.log(process.env.MY_NAME);
 
 // error middleware
 app.use(error.errorMiddlewareHandler);

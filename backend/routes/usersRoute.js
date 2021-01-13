@@ -1,11 +1,11 @@
 const express = require('express');
-const userRoutes = express.Router();
+const userRouter = express.Router();
 const User = require('../models/User');
 const asyncHandler = require('express-async-handler'); 
 const generateToken = require('../utils/generateToken');
 
 // Register
-userRoutes.post('/register', asyncHandler (async (req, res) => {
+userRouter.post('/register', asyncHandler (async (req, res) => {
   const { name, email, password } = req.body;
   
   const userExist = await User.findOne({ email: email });
@@ -24,7 +24,7 @@ userRoutes.post('/register', asyncHandler (async (req, res) => {
 }));
 
 // Login
-userRoutes.post('/login', asyncHandler(async (req, res) => {
+userRouter.post('/login', asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
   const user = await User.findOne({ email: email });
@@ -45,18 +45,18 @@ userRoutes.post('/login', asyncHandler(async (req, res) => {
 }));
 
 // Update user
-userRoutes.put('/update', (req, res) => {
+userRouter.put('/update', (req, res) => {
   res.send('Update route');
 });
 
 // Delete user
-userRoutes.delete('/:id', (req, res) => {
+userRouter.delete('/:id', (req, res) => {
   res.send('Delete route');
 });
 
 // Fetch users
-userRoutes.get('/', (req, res) => {
+userRouter.get('/', (req, res) => {
   res.send('Fetch route');
 });
 
-module.exports = userRoutes;
+module.exports = userRouter;

@@ -1,7 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const error = require('./middlewares/errorMiddlewarehandler');
-const usersRoute = require('./routes/usersRoute');
+const usersRouter = require('./routes/usersRoute');
+const bookRouter = require('./routes/bookRoute');
 
 dotenv.config();
 // connect MongoDB
@@ -13,7 +14,11 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.use('/api/users', usersRoute);
+// Users
+app.use('/api/users', usersRouter);
+
+// Books
+app.use('/api/books', bookRouter);
 
 // error middleware
 app.use(error.errorMiddlewareHandler);

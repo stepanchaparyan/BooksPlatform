@@ -1,4 +1,4 @@
-import { CREATE_BOOK_REQUEST, CREATE_BOOK_SUCCESS, CREATE_BOOK_FAIL } from '../../actions/actionsTypes';
+import { CREATE_BOOK_REQUEST, CREATE_BOOK_SUCCESS, CREATE_BOOK_FAIL } from '../../actions/actionTypes';
 
 const createBookReducer = (state={}, action) => {
   const { type, payload } = action;
